@@ -5,7 +5,7 @@
 ---
 ## 概念:
 ### 停顿
-*在本文中 我将停顿划分为两种类型 主动型 和 被动型*
+在本文中 我将停顿划分为两种类型 *主动型* 和 *被动型*
 #### 主动型停顿
 插件/模组/服务端主动发起的停顿
 #### 被动性停顿
@@ -26,7 +26,6 @@
 ## 案例分析
 ### 案例一
 来源: https://www.mcbbs.net/thread-1159037-1-1.html
-
 
     [13:00:45 ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH  - git-Paper-444 (MC: 1.16.5) ---
     [13:00:45 ERROR]: The server has not responded for 10 seconds! Creating thread dump
@@ -74,14 +73,29 @@
     [13:00:45 ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH ---
     [13:00:45 ERROR]: ------------------------------
 
+从 `State: TIMED_WAITING` 可以看出，停顿状态是`等待一段时间`。
+
+根据报错堆栈第一行
+`[13:00:45 ERROR]:               java.base@11.0.10/java.lang.Thread.sleep`
+
+我们可以发现调用了`Thread.sleep()`方法，该方法的作用是让线程暂时停止执行，所以是插件故意暂停执行导致了阻塞
+
+根据
+
+    [13:00:45 ERROR]:               org.maxgamer.quickshop.util.MsgUtil.loadGameLanguage(MsgUtil.java:237)
+
+可以看出是QuickShop造成的。
+
+得出结论：QuickShop插件故意暂停执行导致了阻塞
+
 ### 案例二
 来源:https://www.mcbbs.net/thread-1158938-1-1.html
-(重复报错已删除)
+（重复报错已删除）
 
     [12:39:52 INFO]: Done (48.832s)! For help, type "help"
     [12:39:52 INFO]: Timings Reset
-    [12:39:53 INFO]:     [CS-CoreLib2] Loaded Protection Module "Residence v4.9.2.3"
-    [12:39:53 INFO]:     [Residence] Enabled compatability with SlimeFun plugin
+    [12:39:53 INFO]: [CS-CoreLib2] Loaded Protection Module "Residence v4.9.2.3"
+    [12:39:53 INFO]: [Residence] Enabled compatability with SlimeFun plugin
     [12:39:53 INFO]: Could not perform update. Is the Github down?
     [12:39:53 WARN]: java.io.IOException: Server returned HTTP response code: 403 for URL: https://api.github.com/repos/ClayCoffee/ClayTech/releases
     [12:39:53 WARN]:        at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
