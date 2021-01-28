@@ -1,0 +1,47 @@
+来源: https://www.mcbbs.net/thread-1159037-1-1.html
+
+[13:00:45 ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH  - git-Paper-444 (MC: 1.16.5) ---
+[13:00:45 ERROR]: The server has not responded for 10 seconds! Creating thread dump
+[13:00:45 ERROR]: ------------------------------
+[13:00:45 ERROR]: Server thread dump (Look for plugins here before reporting to Paper!):
+[13:00:45 ERROR]: ------------------------------
+[13:00:45 ERROR]: Current Thread: Server thread
+[13:00:45 ERROR]:       PID: 21 | Suspended: false | Native: false | State: TIMED_WAITING
+[13:00:45 ERROR]:       Stack:
+[13:00:45 ERROR]:               java.base@11.0.10/java.lang.Thread.sleep(Native Method)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.util.language.game.MojangGameLanguageImpl.<init>(MojangGameLanguageImpl.java:68)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.util.MsgUtil.loadGameLanguage(MsgUtil.java:237)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.util.MsgUtil.loadCfgMessages(MsgUtil.java:250)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.util.MsgUtil.updateMessages(MsgUtil.java:1024)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.util.MsgUtil.loadCfgMessages(MsgUtil.java:316)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.QuickShop.onEnable(QuickShop.java:693)
+[13:00:45 ERROR]:               app//org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:263)
+[13:00:45 ERROR]:               app//org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:380)
+[13:00:45 ERROR]:               app//org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:483)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.command.subcommand.SubCommand_Reload.onCommand(SubCommand_Reload.java:39)
+[13:00:45 ERROR]:               org.maxgamer.quickshop.command.CommandManager.onCommand(CommandManager.java:413)
+[13:00:45 ERROR]:               app//org.bukkit.command.PluginCommand.execute(PluginCommand.java:45)
+[13:00:45 ERROR]:               app//org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:159)
+[13:00:45 ERROR]:               app//org.bukkit.craftbukkit.v1_16_R3.CraftServer.dispatchCommand(CraftServer.java:807)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PlayerConnection.handleCommand(PlayerConnection.java:2021)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PlayerConnection.c(PlayerConnection.java:1832)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PlayerConnection.a(PlayerConnection.java:1785)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PacketPlayInChat.a(PacketPlayInChat.java:47)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PacketPlayInChat.a(PacketPlayInChat.java:5)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PlayerConnectionUtils.lambda$ensureMainThread$1(PlayerConnectionUtils.java:23)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.PlayerConnectionUtils$$Lambda$6939/0x0000000801c21840.run(Unknown Source)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.TickTask.run(SourceFile:18)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.IAsyncTaskHandler.executeTask(IAsyncTaskHandler.java:136)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.IAsyncTaskHandlerReentrant.executeTask(SourceFile:23)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.IAsyncTaskHandler.executeNext(IAsyncTaskHandler.java:109)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer.bb(MinecraftServer.java:1132)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer.executeNext(MinecraftServer.java:1125)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.IAsyncTaskHandler.awaitTasks(IAsyncTaskHandler.java:119)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer.sleepForTick(MinecraftServer.java:1086)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer.w(MinecraftServer.java:1000)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer.lambda$a$0(MinecraftServer.java:173)
+[13:00:45 ERROR]:               app//net.minecraft.server.v1_16_R3.MinecraftServer$$Lambda$3125/0x0000000800905c40.run(Unknown Source)
+[13:00:45 ERROR]:               java.base@11.0.10/java.lang.Thread.run(Thread.java:834)
+[13:00:45 ERROR]: ------------------------------
+[13:00:45 ERROR]: --- DO NOT REPORT THIS TO PAPER - THIS IS NOT A BUG OR A CRASH ---
+[13:00:45 ERROR]: ------------------------------
